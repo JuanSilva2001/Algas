@@ -1,2 +1,2 @@
 usr = 'root'
-pswd = 'urubu100'
+pswd = 'S@opaulo18'
