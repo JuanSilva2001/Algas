@@ -14,6 +14,7 @@ def criar_arquivo_sensor():
         sensor=arquivo.readlines()[0]
 
 def gerar_dados(dados):
+    criar_arquivo_sensor()
     vetor_alarme = [8, 26, 20, 6]
     vetor_bol=['A', 'A', 'A', 'A']
     #sql_insert="insert into dados_aquario (sensor, ph, temperatura, turbidez, oxigenio, data_registro) VALUES "
