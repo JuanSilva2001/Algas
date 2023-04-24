@@ -3,6 +3,12 @@ import datetime
 import time
 import psutil
 
+def criar_arquivo_sensor():
+    try:
+        open("sensor.config", "r")
+    except:
+        open("sensor.config", "w").write("Sensor_dois")
+
 def gerar_dados(dados):
     vetor_alarme = [8, 26, 20, 6]
     vetor_bol=['A', 'A', 'A', 'A']
