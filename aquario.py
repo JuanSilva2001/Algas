@@ -7,14 +7,14 @@ sensor=""
 
 def criar_arquivo_sensor():
     try:
-        arquivo = open("sensor.config", "r")
+        sensor = open("sensor.config", "r").readlines()[0]
     except:
+        sensor = "Sensor_dois"
         open("sensor.config", "w").write("Sensor_dois")
-    finally:
-        sensor=arquivo.readlines()[0]
+    print(sensor)
+    
 
 def gerar_dados(dados):
-    criar_arquivo_sensor()
     vetor_alarme = [8, 26, 20, 6]
     vetor_bol=['A', 'A', 'A', 'A']
     #sql_insert="insert into dados_aquario (sensor, ph, temperatura, turbidez, oxigenio, data_registro) VALUES "
@@ -50,5 +50,6 @@ def gerar_dados(dados):
     print(f"{processamento_final}-{processamento_inicial}={processamento_final-processamento_inicial}")
     tempo_final= (time.time())
     print(f"Finalizado em {str(round(tempo_final-tempo_inicial,2))} com uso de memoria {str(round(processamento_final-processamento_inicial,2))} com {dados} dados!")
+criar_arquivo_sensor()
 for i in range(5):
     gerar_dados(int(input(f"Quantos dados voce deseja inserir no banco? ({i+1}º cenário)\n").replace("_","")))
