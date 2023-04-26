@@ -7,8 +7,8 @@ def criar_arquivo_sensor():
     try:
         sensor = open("sensor.config", "r").readlines()[0]
     except:
-        sensor = "Sensor_quatro"
-        open("sensor.config", "w").write("Sensor_quatro")
+        sensor = "Sensor_cinco"
+        open("sensor.config", "w").write("Sensor_cinco")
     return sensor
     
 
